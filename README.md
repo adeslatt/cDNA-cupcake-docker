@@ -9,7 +9,7 @@ A docker image for running [cDNA_Cupcake] (https://github.com/Magdoll/cDNA_Cupca
 There are six Python scripts for singlecell in cDNA_Cupcake:
 
 ## cDNA_Cupcake/singlecell
-|   | <p align="center"><img src=!https://github.com/Magdoll/images_public/blob/master/logos/Cupcake_logo.png" width="250" align="right"></p> |
+|   | <p align="center"><img src="https://github.com/Magdoll/images_public/blob/master/logos/Cupcake_logo.png" width="250" align="right"></p> |
 |---|---|
 | script name | description |
 |---|---|
