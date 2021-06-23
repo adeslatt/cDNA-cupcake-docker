@@ -10,6 +10,7 @@ There are six Python scripts for singlecell in cDNA_Cupcake:
 
 ## cDNA_Cupcake/singlecell
 |   | <p align="center"><img src="https://github.com/Magdoll/images_public/blob/master/logos/Cupcake_logo.png" width="100" align="right"></p> |
+|--|--|
 | script name | description |
 | `UMI_BC_error_correct.py` | |
 | `clip_out_UMI_cellBC.py` | |
