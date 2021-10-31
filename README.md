@@ -59,14 +59,15 @@ optional arguments:
                         Output from running DetectBeadSynthesisErrors in DropSeq cookbook (ex:
                         star_gene_exon_tagged_clean_substitution_clean2.bam_report.txt)
 ```
-
-```
+  
 ### Running `clip_out_UMI_cellBC.py`
+
 ```
 docker run --rm -v $PWD:$PWD -w $PWD -it --entrypoint /bin/bash ghcr.io/adeslatt/cdnacupcake:latest clip_out_UMI_cellBC.py -h
 ```
 
 If all is well this will return on the command line:
+
 ```
 usage: clip_out_UMI_cellBC.py [-h] [-u UMI_LEN] [-b BC_LEN] [-t TSO_LEN] [--umi_type {A3,G5,G5-10X,G5-clip}] [--g5_clip_seq G5_CLIP_SEQ] [--bc_rank_file BC_RANK_FILE]
                               bam_filename output_prefix
@@ -93,6 +94,7 @@ optional arguments:
 ```
 
 ### Running `cluster_by_UMI_mapping.py`
+
 ```
 docker run --rm -v $PWD:$PWD -w $PWD -it --entrypoint /bin/bash ghcr.io/adeslatt/cdnacupcake:latest cluster_by_UMI_mapping.py -h
 ```
@@ -100,7 +102,7 @@ docker run --rm -v $PWD:$PWD -w $PWD -it --entrypoint /bin/bash ghcr.io/adeslatt
 If all is well this will return on the command line:
 
 ```
-  usage: Cluster reads by UMI/BC [-h] [-d OUT_DIR] [--useBC] flnc_bam sorted_sam umi_bc_csv output_prefix
+usage: Cluster reads by UMI/BC [-h] [-d OUT_DIR] [--useBC] flnc_bam sorted_sam umi_bc_csv output_prefix
 
 positional arguments:
   flnc_bam              FLNC BAM filename
@@ -115,11 +117,12 @@ optional arguments:
   --useBC               Has single cell BC (default: off)
 ```
 ### Running `collate_FLNC_gene_info.py`
-```
+
+ ```
 docker run --rm -v $PWD:$PWD -w $PWD -it --entrypoint /bin/bash ghcr.io/adeslatt/cdnacupcake:latest ollate_FLNC_gene_info.py -h
 ```
 
- If all is well this will return on the command line:
+If all is well this will return on the command line:
 
 ```
 usage: collate_FLNC_gene_info.py [-h] [-i ONTARGET_FILENAME] [-p DEDUP_ORF_PREFIX] [--no-extra-base] [--is_clustered]
@@ -147,6 +150,7 @@ docker run --rm -v $PWD:$PWD -w $PWD -it --entrypoint /bin/bash ghcr.io/adeslatt
 ```
 
 If all is well this will return on the command line:
+
 ```
 usage: De-duplicate FLNC reads per cluster [-h] [--fasta FASTA] [--gff GFF] [--faa FAA] corrected_csv cluster_file
 
