@@ -31,6 +31,36 @@ There are six Python scripts for singlecell in cDNA_Cupcake, each has been wrapp
 
 The following was run from a terminal window on a MacBookPro, but this could be run from anywhere accessible to the GitHub container registry.
 
+### Running 'UMI_BC_error_correct.py`
+```
+docker run --rm -v $PWD:$PWD -w $PWD -it --entrypoint /bin/bash ghcr.io/adeslatt/cdnacupcake:latest UMI_BC_error_correct.py -h
+```
+  
+IF all is well this will return on the command line:
+  
+```
+usage: UMI_BC_error_correct.py [-h] [--bc_rank_file BC_RANK_FILE] [--only_top_ranked] [--dropseq_clean_report DROPSEQ_CLEAN_REPORT]
+                               [--dropseq_synthesis_report DROPSEQ_SYNTHESIS_REPORT]
+                               input_csv output_csv
+
+positional arguments:
+  input_csv             Input CSV
+  output_csv            Output CSV
+
+optional arguments:
+  -h, --help            show this help message and exit
+  --bc_rank_file BC_RANK_FILE
+                        (Optional) cell barcode rank file from short read data
+  --only_top_ranked     (Optional) only output those that are top-ranked. Must have --bc_rank_file.
+  --dropseq_clean_report DROPSEQ_CLEAN_REPORT
+                        Output from running DetectBeadSubstitutionErrors in DropSeq cookbook (ex:
+                        star_gene_exon_tagged_clean_substitution.bam_report.txt)
+  --dropseq_synthesis_report DROPSEQ_SYNTHESIS_REPORT
+                        Output from running DetectBeadSynthesisErrors in DropSeq cookbook (ex:
+                        star_gene_exon_tagged_clean_substitution_clean2.bam_report.txt)
+```
+
+```
 ### Running `clip_out_UMI_cellBC.py`
 ```
 docker run --rm -v $PWD:$PWD -w $PWD -it --entrypoint /bin/bash ghcr.io/adeslatt/cdnacupcake:latest clip_out_UMI_cellBC.py -h
@@ -67,6 +97,8 @@ optional arguments:
 docker run --rm -v $PWD:$PWD -w $PWD -it --entrypoint /bin/bash ghcr.io/adeslatt/cdnacupcake:latest cluster_by_UMI_mapping.py -h
 ```
 
+If all is well this will return on the command line:
+
 ```
   usage: Cluster reads by UMI/BC [-h] [-d OUT_DIR] [--useBC] flnc_bam sorted_sam umi_bc_csv output_prefix
 
@@ -86,9 +118,11 @@ optional arguments:
 ```
 docker run --rm -v $PWD:$PWD -w $PWD -it --entrypoint /bin/bash ghcr.io/adeslatt/cdnacupcake:latest ollate_FLNC_gene_info.py -h
 ```
-  
+
+ If all is well this will return on the command line:
+
 ```
-  usage: collate_FLNC_gene_info.py [-h] [-i ONTARGET_FILENAME] [-p DEDUP_ORF_PREFIX] [--no-extra-base] [--is_clustered]
+usage: collate_FLNC_gene_info.py [-h] [-i ONTARGET_FILENAME] [-p DEDUP_ORF_PREFIX] [--no-extra-base] [--is_clustered]
                                  group_filename csv_gz_filename class_filename output_filename
 
 positional arguments:
@@ -112,6 +146,7 @@ optional arguments:
 docker run --rm -v $PWD:$PWD -w $PWD -it --entrypoint /bin/bash ghcr.io/adeslatt/cdnacupcake:latest  dedup_FLNC_per_cluster.py -h
 ```
 
+If all is well this will return on the command line:
 ```
 usage: De-duplicate FLNC reads per cluster [-h] [--fasta FASTA] [--gff GFF] [--faa FAA] corrected_csv cluster_file
 
