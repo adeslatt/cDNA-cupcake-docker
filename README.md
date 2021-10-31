@@ -1,5 +1,6 @@
 
 # README
+[![reviewdog misspell](https://github.com/adeslatt/cDNA-cupcake-docker/actions/workflows/catch_typos.yml/badge.svg)](https://github.com/adeslatt/cDNA-cupcake-docker/actions/workflows/catch_typos.yml)
 
 A docker image for running [cDNA_Cupcake] (https://github.com/Magdoll/cDNA_Cupcake)
 )
