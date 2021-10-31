@@ -4,7 +4,7 @@ jobs:
  ci:
     runs-on: ubuntu-latest
     steps:
-    - uses: cDNA-cupckae-docker@main
+    - uses: adeslatt/cDNA-cupcake-docker@main
     - run: |
         set -x
         docker version

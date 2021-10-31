@@ -7,7 +7,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Check out code.
-        uses: actions/checkout
+        uses: adeslatt/cDNA-cupcake-docker@main
       - name: misspell
         uses: reviewdog/action-misspell@master
         with:
