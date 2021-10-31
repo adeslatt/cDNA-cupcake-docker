@@ -29,9 +29,9 @@ There are six Python scripts for singlecell in cDNA_Cupcake, each has been wrapp
 ## Testing each command 
 ### Using the most recent version
 
-The following was run from a terminal window on a MacBookPro
+The following was run from a terminal window on a MacBookPro, but this could be run from anywhere accessible to the GitHub container registry.
 
-
+### Running `clip_out_UMI_cellBC.py`
 ```
 docker run --rm -v $PWD:$PWD -w $PWD -it --entrypoint /bin/bash ghcr.io/adeslatt/cdnacupcake:latest clip_out_UMI_cellBC.py -h
 ```
@@ -60,4 +60,49 @@ optional arguments:
   --bc_rank_file BC_RANK_FILE
                         (Optional) cell barcode rank file from short read data
 
+```
+
+### Running `cluster_by_UMI_mapping.py`
+```
+docker run --rm -v $PWD:$PWD -w $PWD -it --entrypoint /bin/bash ghcr.io/adeslatt/cdnacupcake:latest cluster_by_UMI_mapping.py -h
+```
+
+```
+  usage: Cluster reads by UMI/BC [-h] [-d OUT_DIR] [--useBC] flnc_bam sorted_sam umi_bc_csv output_prefix
+
+positional arguments:
+  flnc_bam              FLNC BAM filename
+  sorted_sam            Mapped, sorted FLNC SAM filename
+  umi_bc_csv            Clipped UMI/BC CSV filename
+  output_prefix         Output prefix
+
+optional arguments:
+  -h, --help            show this help message and exit
+  -d OUT_DIR, --out_dir OUT_DIR
+                        Cluster out directory (default: tmp/)
+  --useBC               Has single cell BC (default: off)
+```
+### Running `collate_FLNC_gene_info.py`
+```
+docker run --rm -v $PWD:$PWD -w $PWD -it --entrypoint /bin/bash ghcr.io/adeslatt/cdnacupcake:latest ollate_FLNC_gene_info.py -h
+```
+  
+```
+  usage: collate_FLNC_gene_info.py [-h] [-i ONTARGET_FILENAME] [-p DEDUP_ORF_PREFIX] [--no-extra-base] [--is_clustered]
+                                 group_filename csv_gz_filename class_filename output_filename
+
+positional arguments:
+  group_filename        Collapse .group.txt
+  csv_gz_filename       Trimmed UMI/BC CSV info, compressed with gzip
+  class_filename        SQANTI classification.txt
+  output_filename       Output filename
+
+optional arguments:
+  -h, --help            show this help message and exit
+  -i ONTARGET_FILENAME, --ontarget_filename ONTARGET_FILENAME
+                        (Optional) on target information text
+  -p DEDUP_ORF_PREFIX, --dedup_ORF_prefix DEDUP_ORF_PREFIX
+                        (Optional) dedup-ed ORF group prefix, must have <pre>.faa and <pre>.group.txt
+  --no-extra-base       Drop all reads where there are extra bases
+  --is_clustered        group.txt contains post-UMI clustering result
 ```
