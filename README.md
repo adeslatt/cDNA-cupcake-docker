@@ -106,3 +106,22 @@ optional arguments:
   --no-extra-base       Drop all reads where there are extra bases
   --is_clustered        group.txt contains post-UMI clustering result
 ```
+
+### Running `dedup_FLNC_per_cluster.py`
+```
+docker run --rm -v $PWD:$PWD -w $PWD -it --entrypoint /bin/bash ghcr.io/adeslatt/cdnacupcake:latest  dedup_FLNC_per_cluster.py -h
+```
+
+```
+usage: De-duplicate FLNC reads per cluster [-h] [--fasta FASTA] [--gff GFF] [--faa FAA] corrected_csv cluster_file
+
+positional arguments:
+  corrected_csv  Annotated, error-corrected FLNC CSV file
+  cluster_file   Short read barcode to cluster CSV file
+
+optional arguments:
+  -h, --help     show this help message and exit
+  --fasta FASTA  (Optional) Fasta file (IDs should be PB.X.Y)
+  --gff GFF      (Optional) GFF file (IDs should be PB.X.Y)
+  --faa FAA      (Optional) Faa file (IDs should be PB.X.Y)
+```
