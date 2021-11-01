@@ -8,8 +8,6 @@ This is the repository for the Dockerfile made to containerize the running [cDNA
 docker pull ghcr.io/adeslatt/cdna-cupcake-docker:latest
 ```
 
-Or you can run it directly 
-
 ## Overview
 
 There are six Python scripts for singlecell in cDNA_Cupcake, each has been wrapped so that you can execute seamlessly the routines in the container.
