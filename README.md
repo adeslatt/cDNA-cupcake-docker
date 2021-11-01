@@ -2,7 +2,7 @@
 # README
 [![reviewdog misspell](https://github.com/adeslatt/cDNA-cupcake-docker/actions/workflows/catch_typos.yml/badge.svg)](https://github.com/adeslatt/cDNA-cupcake-docker/actions/workflows/catch_typos.yml)[![Docker Image CI](https://github.com/adeslatt/cDNA-cupcake-docker/actions/workflows/docker-image.yml/badge.svg?branch=main)](https://github.com/adeslatt/cDNA-cupcake-docker/actions/workflows/docker-image.yml)
 
-This is the repository for the Dockerfile made to containerize the running [cDNA_Cupcake] (https://github.com/Magdoll/cDNA_Cupcake).   It is built automatically upon any push to the repository using GitHub actions.  Two workflows are set up to execute upon each push.  The first is a spelling check using mispell and the second is using the GitHub action to build the dockerimage.  The image is in the GitHub container registry and may be pulled with
+This is the repository for the Dockerfile made to containerize the running [cDNA_Cupcake](https://github.com/Magdoll/cDNA_Cupcake).   It is built automatically upon any push to the repository using GitHub actions.  Two workflows are set up to execute upon each push.  The first is a spelling check using mispell and the second is using the GitHub action to build the dockerimage.  The image is in the GitHub container registry and may be pulled with
 
 ```
 docker pull ghcr.io/adeslatt/cdnacupcake:latest
