@@ -5,7 +5,7 @@
 This is the repository for the Dockerfile made to containerize the running [cDNA_Cupcake](https://github.com/Magdoll/cDNA_Cupcake).   It is built automatically upon any push to the repository using GitHub actions.  Two workflows are set up to execute upon each push.  The first is a spelling check using mispell and the second is using the GitHub action to build the dockerimage.  The image is in the GitHub container registry and may be pulled with
 
 ```
-docker pull ghcr.io/adeslatt/cdnacupcake:latest
+docker pull ghcr.io/adeslatt/cdna-cupcake-docker:latest
 ```
 
 Or you can run it directly 
@@ -33,7 +33,7 @@ The following was run from a terminal window on a MacBookPro, but this could be 
 
 ### Running 'UMI_BC_error_correct.py`
 ```
-docker run --rm -v $PWD:$PWD -w $PWD -it --entrypoint /bin/bash ghcr.io/adeslatt/cdnacupcake:latest UMI_BC_error_correct.py -h
+docker run --rm -v $PWD:$PWD -w $PWD -it --entrypoint /bin/bash ghcr.io/adeslatt/cdna-cupcake-docker:latest UMI_BC_error_correct.py -h
 ```
   
 IF all is well this will return on the command line:
@@ -63,7 +63,7 @@ optional arguments:
 ### Running `clip_out_UMI_cellBC.py`
 
 ```
-docker run --rm -v $PWD:$PWD -w $PWD -it --entrypoint /bin/bash ghcr.io/adeslatt/cdnacupcake:latest clip_out_UMI_cellBC.py -h
+docker run --rm -v $PWD:$PWD -w $PWD -it --entrypoint /bin/bash ghcr.io/adeslatt/cdna-cupcake-docker:latest clip_out_UMI_cellBC.py -h
 ```
 
 If all is well this will return on the command line:
@@ -96,7 +96,7 @@ optional arguments:
 ### Running `cluster_by_UMI_mapping.py`
 
 ```
-docker run --rm -v $PWD:$PWD -w $PWD -it --entrypoint /bin/bash ghcr.io/adeslatt/cdnacupcake:latest cluster_by_UMI_mapping.py -h
+docker run --rm -v $PWD:$PWD -w $PWD -it --entrypoint /bin/bash ghcr.io/adeslatt/cdna-cupcake-docker:latest cluster_by_UMI_mapping.py -h
 ```
 
 If all is well this will return on the command line:
@@ -119,7 +119,7 @@ optional arguments:
 ### Running `collate_FLNC_gene_info.py`
 
  ```
-docker run --rm -v $PWD:$PWD -w $PWD -it --entrypoint /bin/bash ghcr.io/adeslatt/cdnacupcake:latest ollate_FLNC_gene_info.py -h
+docker run --rm -v $PWD:$PWD -w $PWD -it --entrypoint /bin/bash ghcr.io/adeslatt/cdna-cupcake-docker:latest ollate_FLNC_gene_info.py -h
 ```
 
 If all is well this will return on the command line:
@@ -146,7 +146,7 @@ optional arguments:
 
 ### Running `dedup_FLNC_per_cluster.py`
 ```
-docker run --rm -v $PWD:$PWD -w $PWD -it --entrypoint /bin/bash ghcr.io/adeslatt/cdnacupcake:latest  dedup_FLNC_per_cluster.py -h
+docker run --rm -v $PWD:$PWD -w $PWD -it --entrypoint /bin/bash ghcr.io/adeslatt/cdna-cupcake-docker:latest  dedup_FLNC_per_cluster.py -h
 ```
 
 If all is well this will return on the command line:
