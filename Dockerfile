@@ -36,13 +36,17 @@ ENV APPS_HOME /apps
 RUN mkdir $APPS_HOME
 WORKDIR $APPS_HOME
 
-# Install C-DNA cupcake
-# checkout the specific version 4eee00d tag'd version v24.3.0
+# Build cDNA_Cupcake  conda environment
+# there wasn't a conda_env.yml file in the repos - so we made one and are copying it from this
+# repos to where it can be found
+#
+COPY $APPNAME.conda_env.yml $APPS_HOME/$APPNAME/$APPNAME.conda_env.yml
+
 ENV ENV_PREFIX /env/$APPNAME
 RUN conda update --name base --channel defaults conda && \
-    conda create --prefix $ENV_PREFIX --force && \
+    conda env create --prefix $ENV_PREFIX --file $APPS_HOME/$APPNAME/$APPNAME.conda_env.yml --force && \
     conda clean --all --yes
-
+    
 ###########################################################################
 # need to switch shell from default /sh to /bash so that `source` works   #
 # install an editor so emacs can be used if the image needs debugging!    #
