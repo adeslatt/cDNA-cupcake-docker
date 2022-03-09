@@ -1,22 +1,11 @@
 # Initially found here: https://github.com/mlorthiois/bioinformatics-docker/tree/e9141202b407ea420a4213840a425f7031a7cd47/SQANTI3
-FROM continuumio/miniconda3
+FROM nfcore/base:1.9
 LABEL description="Basic docker image for cDNA-cupcake"
 ENV CONDA_ENV="cdnacupcake"
 
 COPY environment.yml /opt/environment.yml
 
-# Install procps so that Nextflow can poll CPU usage and
-# deep clean the apt cache to reduce image/layer size
-RUN apt-get update && \
-    apt-get install -y \
-        procps \
-        build-essential && \
-    apt-get clean -y && \
-    rm -rf /var/lib/apt/lists/*
-
-# Install the conda environment
-COPY environment.yml /
-RUN conda env create -f /environment.yml && conda clean -a
+RUN conda env create -f /opt/environment.yml && conda clean -a
 
 # Add conda installation dir to PATH (instead of doing 'conda activate')
 #ENV PATH /opt/conda/envs/${CONDA_ENV}/bin:$PATH

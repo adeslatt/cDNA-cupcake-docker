@@ -10,13 +10,12 @@ dependencies:
   - libcblas=3.9.0
   - libcxx=12.0.0
   - libffi=3.3
-  - libgfortran=5.0.0
   - libgfortran5=9.3.0
   - liblapack=3.9.0
   - libopenblas=0.3.18
   - llvm-openmp=13.0.1
   - ncurses=6.3
-  - numpy=1.21.5
+  - numpy=1.22.3
   - openssl=1.1.1l
   - pip=21.2.4
   - python=3.8.5
