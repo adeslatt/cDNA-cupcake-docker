@@ -1,5 +1,5 @@
- name: cdnacupcake
-  channels:
+name: cdnacupcake
+channels:
   - conda-forge
   - defaults
 dependencies:
@@ -36,7 +36,6 @@ dependencies:
   - libcxx=12.0.1
   - libdeflate=1.10
   - libffi=3.4.2
-  - libgfortran=5.0.0
   - libgfortran5=9.3.0
   - libglib=2.70.2
   - libiconv=1.16
